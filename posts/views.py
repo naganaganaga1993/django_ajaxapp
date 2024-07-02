@@ -6,7 +6,7 @@ from .forms  import PostForm
 
 class IndexView(View):        
   def get(self,request,*args,**kwargs):
-    posts =  Post.objects.all().all().order_by('-created_at')
+    posts = Post.objects.all().all().order_by('-created_at')
     form = PostForm()
     return render(request, 'posts/index.html', {'posts': posts, 'form': form})
 
@@ -18,7 +18,8 @@ class IndexView(View):
         'content': post.content,
         'created_at': post.created_at.strftime('%Y-%m-%d %H:%M:%S')
       })
-    
+    return JsonResponse({'error': 'Form is invalid'}, status=400)
+      
 # class CreateView(View):
 #   def get(self, request, *args, **kwargs):
 #     form = PostForm()
