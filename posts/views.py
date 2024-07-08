@@ -19,6 +19,7 @@ class IndexView(View):
         'created_at': post.created_at.strftime('%Y-%m-%d %H:%M:%S')
       })
     return JsonResponse({'error': 'Form is invalid'}, status=400)
+  
       
 # class CreateView(View):
 #   def get(self, request, *args, **kwargs):
