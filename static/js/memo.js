@@ -19,7 +19,7 @@ function post (){
     const formData = new FormData(form);
   
     fetch('', {
-      method: 'POSTS',
+      method: 'POST',
       body: formData,
       headers: {
           'X-Requested-With': 'XMLHttpRequest',
